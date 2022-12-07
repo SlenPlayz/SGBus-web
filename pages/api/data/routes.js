@@ -1,3 +1,5 @@
+import fetch from "cross-fetch";
+
 export default async function handler(req, res) {
   //   try {
   await fetch(`https://data.busrouter.sg/v1/routes.min.geojson`)
