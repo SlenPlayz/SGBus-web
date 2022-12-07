@@ -27,6 +27,7 @@ export default function Home() {
         />
         <meta property="og:type" content="website"></meta>
       </Head>
+      <img src="https://i.ibb.co/264cFjH/e0bebd6d-b260-4714-946e-7c4e41720cdb.png" className="dn" />
       <div>
         <nav>
           <a href="https://github.com/SlenPlayz/SGBus">

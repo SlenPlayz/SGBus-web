@@ -6,6 +6,9 @@ body {
   font-family: monospace;
   scroll-snap-type: y mandatory;
 }
+.dn{
+  display: none;
+}
 nav {
   position: fixed;
   top: 0;
