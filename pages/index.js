@@ -4,6 +4,7 @@ export default function Home() {
   return (
     <div>
       <Head>
+        <title>SG Bus</title>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -11,6 +12,20 @@ export default function Home() {
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
         />
+        <meta property="og:title" content="SG Bus" />
+        <meta
+          property="og:description"
+          content="Android app to get arrival timings for Singapore buses"
+        />
+        <meta
+          property="og:image"
+          content="https://i.ibb.co/264cFjH/e0bebd6d-b260-4714-946e-7c4e41720cdb.png"
+        />
+        <meta
+          property="og:url"
+          content="https://sgbus.slen.tk"
+        />
+        <meta property="og:type" content="website"></meta>
       </Head>
       <div>
         <nav>
@@ -70,9 +85,7 @@ export default function Home() {
             <h6>Easily access frequently used stops</h6>
           </div>
           <div className="image">
-            <img
-              src="https://i.ibb.co/YL6VhR6/Favourites.png"
-            />
+            <img src="https://i.ibb.co/YL6VhR6/Favourites.png" />
           </div>
         </div>
 
@@ -100,9 +113,7 @@ export default function Home() {
             <h6>See the route of a bus on a map</h6>
           </div>
           <div className="image">
-            <img
-              src="https://i.ibb.co/GCjnyz4/Route-Map.png"
-            />
+            <img src="https://i.ibb.co/GCjnyz4/Route-Map.png" />
           </div>
         </div>
       </div>
