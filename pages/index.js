@@ -37,7 +37,7 @@ export default function Home() {
         <div className="headingCard">
           <h1>SG Bus</h1>
           <span className="btnSpan">
-            <a href="https://github.com/SlenPlayz/SGBus/releases/latest">
+            <a href="https://play.google.com/store/apps/details?id=com.slen.sgbus">
               <button>
                 <i className="fa-solid fa-download"></i>&nbsp; Download
               </button>
