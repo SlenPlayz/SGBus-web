@@ -14,7 +14,7 @@ export default async function handler(req, res) {
     let response = {};
     response.alerts = [];
     if (data.Message.length != 0) {
-      message = data.Message[0];
+      message = data.Message[0].Content;
       response.alerts.push({ title: "Train service alert", message });
     }
     res.setHeader("Cache-Control", "s-maxage=300");
