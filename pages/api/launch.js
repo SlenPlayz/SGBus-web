@@ -37,6 +37,12 @@ export default async function handler(req, res) {
       message = data.Message[0].Content;
       response.alerts.push({ title: "Train service alert", message });
     }
+    try {
+      let ghCommitHistory = await axios.get("https://api.github.com/repos/slenplayz/sgbusdata/commits");
+      if (ghCommitHistory) {
+        response.lastUpdated = ghCommitHistory.data[0].commit.committer.date
+      }
+    } catch (error) {console.log(error)}
     res.setHeader("Cache-Control", "s-maxage=300");
     res.status(200).json(response);
   } catch (e) {
