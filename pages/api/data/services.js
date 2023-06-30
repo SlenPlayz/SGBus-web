@@ -2,7 +2,7 @@ import fetch from "cross-fetch";
 
 export default async function handler(req, res) {
   //   try {
-  await fetch(`https://data.busrouter.sg/v1/services.json`)
+  await fetch(`https://cdn.jsdelivr.net/gh/SlenPlayz/sgbusdata/data/v1/services.json`)
     .then(x => x.json())
     .then((resp) => {
       res.setHeader("Cache-Control", "s-maxage=259200");
