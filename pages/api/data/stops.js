@@ -10,6 +10,7 @@ export default async function handler(req, res) {
       stops.features.forEach((x) => {
         busStopsParsed.push({
           Name: x.properties.name,
+          Road: x.properties.road,
           Services: x.properties.services,
           id: x.properties.number,
           cords: x.geometry.coordinates,
