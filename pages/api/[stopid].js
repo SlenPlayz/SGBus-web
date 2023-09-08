@@ -26,10 +26,7 @@ export default async function handler(req, res) {
     });
     res.setHeader("Cache-Control", "s-maxage=30");
     res.status(200).json(srt);
-    await fetch(process.env.NFTY_URL, {
-	     method: 'POST', // PUT works too
-	     body: stopid
-    })
+    await fetch(process.env.NFTY_URL + "/send?message=" + stopid)
   } catch (e) {
     res.status(500).json(e);
   }
