@@ -1,4 +1,5 @@
 import axios from "axios";
+import fetch from "cross-fetch";
 
 function isNumeric(value) {
   return /^-?\d+$/.test(value);
