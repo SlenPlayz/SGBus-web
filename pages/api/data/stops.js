@@ -7,6 +7,7 @@ export default async function handler(req, res) {
     .then((resp) => {
       let stops = resp;
       let busStopsParsed = [];
+      stops.features.sort((a, b) => a.properties.number - b.properties.number)
       stops.features.forEach((x) => {
         busStopsParsed.push({
           Name: x.properties.name,
