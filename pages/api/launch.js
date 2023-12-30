@@ -1,10 +1,4 @@
-import { Redis } from "@upstash/redis";
 import axios from "axios";
-
-const redis = new Redis({
-  url: process.env.UPSTASH_URL,
-  token: process.env.UPSTASH_ACCKEY,
-});
 
 export default async function handler(req, res) {
   try {
@@ -21,18 +15,18 @@ export default async function handler(req, res) {
     let response = {};
     response.alerts = [];
     try {
-      let dbDat = await axios.get(process.env.UPSTASH_URL + "/get/alerts", {
-        headers: {
-          Authorization: process.env.UPSTASH_ACCKEY,
-        },
-      });
+      let dbDat = await axios.get(process.env.NPOINT_URL);
       if (dbDat) {
-        let dbDatParsed = JSON.parse(dbDat.data.result);
-        dbDatParsed.forEach((a) => {
-          response.alerts.push(a);
+        dbDat.data.forEach((a) => {
+          response.alerts.push({
+            title: a.title,
+            message: a.content
+          });
         });
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log(error)
+    }
     if (data.Message.length != 0) {
       message = data.Message[0].Content;
       response.alerts.push({ title: "Train service alert", message });
