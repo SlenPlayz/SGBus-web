@@ -17,7 +17,7 @@ export default async function handler(req, res) {
     response.alerts = [];
 
     if (LTATrainServiceAlertData.Message.length != 0) {
-      message = data.Message[0].Content;
+      message = LTATrainServiceAlertData.Message[0].Content;
       response.alerts.push({
         header: "Train service alert",
         message,
@@ -40,6 +40,7 @@ export default async function handler(req, res) {
             type: a.type,
             startTimestamp: a.startTimestamp,
             endTimestamp: a.endTimestamp,
+            crowdMap: a.crowdMap
           });
         });
       }
