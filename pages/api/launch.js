@@ -29,7 +29,7 @@ export default async function handler(req, res) {
     }
     if (data.Message.length != 0) {
       message = data.Message[0].Content;
-      response.alerts.push({ title: "Train service alert", message });
+      response.alerts.push({ title: "Train service alert" + `${data.AffectedSegments.Line ? ": " + data.AffectedSegments.Line : ""}`, message });
     }
     try {
       let ghCommitHistory = await axios.get("https://api.github.com/repos/slenplayz/sgbusdata/commits");
