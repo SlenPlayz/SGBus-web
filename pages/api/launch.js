@@ -11,6 +11,7 @@ export default async function handler(req, res) {
       }
     );
     let data = resp.data.value;
+    let aS = []
     let message;
     let response = {};
     response.alerts = [];
@@ -29,7 +30,12 @@ export default async function handler(req, res) {
     }
     if (data.Message.length != 0) {
       message = data.Message[0].Content;
-      response.alerts.push({ title: "Train service alert" + `${data.AffectedSegments.Line ? ": " + data.AffectedSegments.Line : ""}`, message });
+      if(data.AffectedSegments && data.AffectedSegments.Line.length > 0){
+        data.AffectedSegments.Line.forEach(seg => {
+          aS.push(seg.Line)
+        });
+      }
+      response.alerts.push({ title: "Train service alert" + `${data.AffectedSegments ? ": " + aS.join(", ") : ""}`, message });
     }
     try {
       let ghCommitHistory = await axios.get("https://api.github.com/repos/slenplayz/sgbusdata/commits");
