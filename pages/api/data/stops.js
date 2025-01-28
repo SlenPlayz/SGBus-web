@@ -2,7 +2,7 @@ import fetch from "cross-fetch";
 
 export default async function handler(req, res) {
   //   try {
-  await fetch(`https://cdn.jsdelivr.net/gh/SlenPlayz/sgbusdata/data/v1/stops.geojson`)
+  await fetch(`https://cdn.jsdelivr.net/gh/cheeaun/sgbusdata/data/v1/stops.geojson`)
     .then((x) => x.json())
     .then((resp) => {
       let stops = resp;

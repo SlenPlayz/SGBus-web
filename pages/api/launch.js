@@ -32,7 +32,7 @@ export default async function handler(req, res) {
       response.alerts.push({ title: "Train service alert", message });
     }
     try {
-      let ghCommitHistory = await axios.get("https://api.github.com/repos/slenplayz/sgbusdata/commits");
+      let ghCommitHistory = await axios.get("https://api.github.com/repos/cheeaun/sgbusdata/commits");
       if (ghCommitHistory) {
         response.lastUpdated = ghCommitHistory.data[0].commit.committer.date
       }
