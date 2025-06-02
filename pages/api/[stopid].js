@@ -9,7 +9,7 @@ export default async function handler(req, res) {
   let stopid = req.query.stopid;
   try {
     let resp = await axios.get(
-      `http://datamall2.mytransport.sg/ltaodataservice/BusArrivalv2?BusStopCode=${stopid}`,
+      `https://datamall2.mytransport.sg/ltaodataservice/v3/BusArrival?BusStopCode=${stopid}`,
       {
         headers: {
           AccountKey: process.env.ACCKEY,
